@@ -1,0 +1,64 @@
+
+#myNavbar a{
+             color:white;
+         }
+#drop a{color:black;}
+#myNavbar a:hover{
+             color:burlywood;
+         }
+#navbrand{
+               color:white;
+               font-weight:bold;
+         }
+.card{
+      padding: 10px;}
+#cnfm{background-color: dodgerblue;
+      }
+#rec{background-color: limegreen;
+      }
+#dead{background-color: red;
+      
+     }
+#icnfm{background-color:black;
+       color:orangered;
+      }
+#iact{background-color: black;
+      color:dodgerblue;
+     }
+#irec{background-color: black;
+      color:green;
+      }
+#idead{background-color: black;
+       color:red;
+      }
+.table-dark{background-color:midnightblue;
+           }
+.table-dark thead{
+    background-color:black;
+}
+#abtimg{
+          background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("/images/bgcov4.jpg");
+          height:auto;
+          width:100%;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          color: white;
+          font-weight: bold;
+          background-attachment: fixed;
+       }
+       #foo{
+             background-color:black;
+             color: white;
+             height:50px;
+             padding-top:10px;
+       }
+       @media only screen and (max-width:600px)
+       {
+             .card{
+                   margin-bottom: 10px;
+             }
+       }
+       .activeState{
+            background-color:crimson;
+           }
+      

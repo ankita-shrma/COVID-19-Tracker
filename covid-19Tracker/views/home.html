@@ -1,0 +1,56 @@
+<center><div class="spinner-border" ng-show="showLoader"></div></center>
+<div class="container-fluid" ng-show="showContent">
+  
+    <center><img src="images/covidfont.JPG" class="img-fluid"/></center><br/>
+    <center><h1>Global Update</h1></center>
+    <center><h4>Date:{{date|date:"dd-MM-yyyy HH:mm:ss"}}</h4></center>
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-sm-3 col-11 card" id="cnfm">
+            <center><h3>Confirmed</h3></center><br/>
+            <center><h4>Total: {{global.TotalConfirmed}}</h4></center>
+            <center> <h4>New: {{global.NewConfirmed}}</h4></center>
+        </div>
+
+        <div class="col-sm-3 col-11 card" id="rec">
+            <center><h3>Recovered</h3></center><br/>
+            <center><h4>Total: {{global.TotalRecovered}}</h4></center>
+            <center><h4>New: {{global.NewRecovered}}</h4></center>
+        </div>
+        <div class="col-sm-3  col-11 card" id="dead">
+            <center><h3>Deaths</h3></center><br/>
+            <center><h4>Total: {{global.TotalDeaths}}</h4></center>
+            <center><h4>New: {{global.NewDeaths}}</h4></center>
+        </div>
+      </div>
+        <br/>
+        <center><h1>Country Wise Cases</h1></center>
+        <form>
+        <div class="form-group" >
+          <label for="sel1"><h3>Choose Country:</h3></label>
+          <select class="form-control" id="sel1" name="sellist1" ng-options="country.Country for country in countries|orderBy:'Country'" ng-model="selectedCountry"  ng-change="showCountryCases()">
+           <!-- <option ng-repeat="country in countries|orderBy:'Country'" ng>{{country.Country}}</option>-->
+          </select>
+          
+        </div>
+          </form>    
+         <div class="row justify-content-around">
+        <div class="col-sm-3 col-11 card" id="cnfm">
+            <center><h3>Confirmed</h3></center><br/>
+            <center><h4>Total: {{country.TotalConfirmed}}</h4></center>
+            <center> <h4>New: {{country.NewConfirmed}}</h4></center>
+        </div>
+
+        <div class="col-sm-3 col-11 card" id="rec">
+            <center><h3>Recovered</h3></center><br/>
+            <center><h4>Total: {{country.TotalRecovered}}</h4></center>
+            <center><h4>New: {{country.NewRecovered}}</h4></center>
+        </div>
+        <div class="col-sm-3 col-11 card" id="dead">
+            <center><h3>Deaths</h3></center><br/>
+            <center><h4>Total: {{country.TotalDeaths}}</h4></center>
+            <center><h4>New: {{country.NewDeaths}}</h4></center>
+        </div>
+      </div>
+    </div>
+</div><br/>

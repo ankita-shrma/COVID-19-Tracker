@@ -1,0 +1,1 @@
+var cov19app=angular.module('cov19app',['ui.router','chart.js']);

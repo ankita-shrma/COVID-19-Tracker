@@ -1,0 +1,96 @@
+<center><div class="spinner-border" ng-show="showLoader"></div></center>
+<div class="container" ng-show="showContent">
+    <br/>
+  <center><h1>COVID-19 Cases Of India </h1></center><br/>
+  <div class="row justify-content-around ">
+        <div class="col-sm-2 col-8 card" id="icnfm">
+            <center><h3>Confirmed</h3></center><br/>
+            <center><h4>{{indiaCases.confirmed}}</h4></center>
+            
+        </div>
+         <div class="col-sm-2 col-8 card" id="iact">
+            <center><h3>Active</h3></center><br/>
+            <center><h4>{{indiaCases.active}}</h4></center>
+           
+        </div>
+        <div class="col-sm-2 col-8 card" id="irec">
+            <center><h3>Recovered</h3></center><br/>
+            <center><h4>{{indiaCases.recovered}}</h4></center>
+            
+        </div>
+        <div class="col-sm-2 col-8 card" id="idead">
+            <center><h3>Deaths</h3></center><br/>
+            <center><h4>{{indiaCases.deaths}}</h4></center>
+           
+        </div>
+        
+    </div>
+    <br/>
+    
+    <center><h1>Statewise Cases </h1></center><br/>
+    <div class="table-responsive">
+    <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>State</th>
+        <th>Confirmed</th>
+        <th>Active</th>
+        <th>Recovered</th>
+        <th>Deaths</th>
+        <th>Districtwise Cases</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr ng-repeat="stateCase in statesCases|orderBy:'state'">
+        <td>{{stateCase.state}}</td>
+        <td>{{stateCase.confirmed }}</td>
+        <td>{{stateCase.active}}</td>
+        <td>{{stateCase.recovered}}</td>
+        <td>{{stateCase.deaths}}</td>
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="showDistrictsCases(stateCase.state)" >Show</button></td>
+      </tr>
+    
+    </tbody>
+  </table>
+</div>
+     <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <center><h4 class="modal-title">District Wise Cases Of {{stateName}}</h4></center>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <div class="table-responsive">
+             <table class="table table-dark table-hover">
+               <thead>
+                 <tr>
+                   <th>District</th>
+                   <th>Confirmed</th>
+                   <th>Active</th>
+                   <th>Recovered</th>
+                   <th>Deaths</th>
+                 </tr>
+               </thead>
+               <tbody>
+                <tr ng-repeat="district in districts|orderBy:'district'">
+                  <td>{{district.district}}</td>
+                  <td>{{district.confirmed }}</td>
+                  <td>{{district.active}}</td>
+                  <td>{{district.recovered}}</td>
+                  <td>{{district.deceased}}</td>
+                </tr>
+    
+              </tbody>
+            </table>
+           </div>
+        </div>
+    </div>
+   </div>
+  </div>
+        
+</div><br/>
